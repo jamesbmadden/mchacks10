@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react'
 import './calendar.css'
 import { Course } from '../types/course';
+import colours from '../colours';
 
 interface CalendarProps {
   startTime: number,
@@ -36,7 +37,7 @@ export default function Calendar ({ startTime, endTime, schedule }: CalendarProp
       })}
 
       { /* Iterate over the items in the schedule and generate a component for each day the course happens */}
-      {schedule.map(course => {
+      {schedule.map((course, index) => {
 
         // for each course, map over the week days and if the class happens that day, return a component
         return course.days.map((happensToday, day) => {
@@ -47,7 +48,7 @@ export default function Calendar ({ startTime, endTime, schedule }: CalendarProp
           const startRow = (course.startTime - startTime) * 2 + 2
           const endRow = (course.endTime - startTime) * 2 + 2
 
-          return <div className='calendar-course' style={{gridColumn: day + 2, gridRowStart: startRow, gridRowEnd: endRow}}>{course.department} {course.code}</div>
+          return <div className='calendar-course' style={{background: colours[index], gridColumn: day + 2, gridRowStart: startRow, gridRowEnd: endRow}}>{course.department} {course.code}</div>
 
         })
 
