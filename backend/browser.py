@@ -38,4 +38,4 @@ def get_course(department, code):
   # wait for the page to load, and you've got your data :)
   WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.CLASS_NAME, 'datadisplaytable')))
 
-  return browser.find_element(By.CLASS_NAME, 'datadisplaytable').get_property('innerText')
+  return browser.find_element(By.CLASS_NAME, 'datadisplaytable').get_property('innerHTML')

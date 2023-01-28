@@ -2,6 +2,7 @@
 from flask import Flask, send_from_directory, send_file, make_response
 
 import browser
+import read
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -18,9 +19,8 @@ def assets(path):
 
 @app.route('/api/course/<department>/<int:code>')
 def get_course(department, code):
-  response = make_response(browser.get_course(department, code), 200)
-  response.mimetype = "text/plain"
-  return response
+  html = browser.get_course(department, code)
+  return read.read_course_info(html, department, code)
 
 
 
