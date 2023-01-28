@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import './calendar.css'
+import './Calendar.css'
 import { Course } from '../types/course';
 import colours from '../colours';
 
