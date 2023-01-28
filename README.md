@@ -1,2 +1,4 @@
-# mchacks10
-The Serpents' McHacks project
+# Schedule Builder
+Project submission for McHacks 10, made by The Serpents.
+
+
