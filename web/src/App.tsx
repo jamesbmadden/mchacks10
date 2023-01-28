@@ -49,8 +49,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Schedule Builder :)</h1>
-      <Calendar startTime={8} endTime={22} schedule={TEST_SCHEDULE}></Calendar>
+      <nav className="nav-pane"></nav>
+      <main className="content-pane">
+        <h1>Schedule Builder :)</h1>
+        <Calendar startTime={8} endTime={22} schedule={TEST_SCHEDULE}></Calendar>
+      </main>
     </div>
   )
 }

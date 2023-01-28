@@ -1,0 +1,11 @@
+.nav-pane {
+  height: 100%;
+  width: 256px;
+}
+.content-pane {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: calc(100% - 256px);
+  right: 0;
+}
