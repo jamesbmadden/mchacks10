@@ -35,6 +35,8 @@
   background: green;
   margin: 2px;
   border-radius: 5px;
+  border-style: none none none solid;
+  border-width: 5px;
   padding: 10px;
 }
 
