@@ -1,14 +1,9 @@
 const colours = [
-  'green',
-  'blue',
-  'red',
-  'orange',
-  'yellow',
-  'pink',
-  'purple',
-  'blueviolet',
-  'aquamarine',
-  'black'
+  '#f48fb1',
+  '#81d4fa',
+  '#ce93d8',
+  '#aed581',
+  '#ffab91',
 ];
 
 export default colours
