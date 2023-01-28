@@ -2,33 +2,27 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import Calendar from './components/Calendar'
+import { Course } from './types/course'
+
+const TEST_SCHEDULE: Course[] = [
+
+  {
+    department: 'MATH',
+    code: 141,
+    startTime: 13,
+    endTime: 14.5,
+    days: [ false, true, false, true, false ]
+  }
+
+]
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <Calendar startTime={8} endTime={22} courses={['test']}></Calendar>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Schedule Builder :)</h1>
+      <Calendar startTime={8} endTime={22} schedule={TEST_SCHEDULE}></Calendar>
     </div>
   )
 }
