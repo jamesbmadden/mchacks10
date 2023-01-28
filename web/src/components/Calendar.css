@@ -1,0 +1,13 @@
+.calendar {
+  display: grid;
+  grid-template-columns: 64px 1fr 1fr 1fr 1fr 1fr;
+}
+.calendar::before {
+  content: '';
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.calendar-day {
+  grid-row: 1;
+}
