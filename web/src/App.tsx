@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import Calendar from './components/Calendar'
 import { Course } from './types/course'
@@ -45,8 +43,6 @@ const TEST_SCHEDULE: Course[] = [
 ]
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
       <nav className="nav-pane"></nav>
