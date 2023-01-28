@@ -60,3 +60,9 @@
   opacity: 0.1;
   z-index: -1;
 }
+
+@media (prefers-color-scheme: light) {
+  .calendar-gridline, .calendar-vertical-gridline {
+    background: black;
+  }
+}
