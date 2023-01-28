@@ -20,11 +20,22 @@ export default function Calendar ({ startTime, endTime, schedule }: CalendarProp
     <div className='calendar' style={{gridTemplateRows: `repeat(${rows + 1}, 1fr)`}}>
 
       {/* row to show each day of the week */}
-      <p className='calendar-day'>Monday</p>
-      <p className='calendar-day'>Tuesday</p>
-      <p className='calendar-day'>Wednesday</p>
-      <p className='calendar-day'>Thursday</p>
-      <p className='calendar-day'>Friday</p>
+      {/* <p className='calendar-day'>Mon</p>
+      <div className='calendar-vertical-gridline'></div>
+      <p className='calendar-day'>Tue</p>
+      <p className='calendar-day'>Wed</p>
+      <p className='calendar-day'>Thu</p>
+      <p className='calendar-day'>Fri</p> */}
+
+
+      {['Mon', 'Tue', 'Wed', 'Thu'].map((day, i) => {
+        return (<>
+          <p className='calendar-day' style={{ gridColumn: i + 2 }}>{ day }</p>
+          <div className='calendar-vertical-gridline' style={{gridColumn: i + 3}}></div>
+        </>)
+      })}
+      
+      <p className='calendar-day' style={{ gridColumn: 6 }}>Fri</p>
 
       { /* iterate over all the rows and create a label for the time
             Array.from(...) makes an array rows long that can be iterated over.
