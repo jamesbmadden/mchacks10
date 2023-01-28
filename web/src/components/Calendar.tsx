@@ -26,9 +26,13 @@ export default function Calendar ({ startTime, endTime, schedule }: CalendarProp
       <p className='calendar-day'>Friday</p>
 
       { /* iterate over all the rows and create a label for the time
-            Array.from(...) makes an array rows long that can be iterated over */}
+            Array.from(...) makes an array rows long that can be iterated over.
+            Also return a div that will act as a grid line for this row */}
       {Array.from(Array(rows)).map((_, i) => {
-        return <p className='calendar-time' style={{gridRow: i + 2}}>{toTimeString(startTime + 0.5 * i)}</p>
+        return (<>
+          <p className='calendar-time' style={{gridRowStart: i + 2}}>{toTimeString(startTime + 0.5 * i)}</p>
+          <div className='calendar-gridline' style={{gridRow: i + 2}}></div>
+        </>)
       })}
 
       { /* Iterate over the items in the schedule and generate a component for each day the course happens */}
@@ -43,7 +47,7 @@ export default function Calendar ({ startTime, endTime, schedule }: CalendarProp
           const startRow = (course.startTime - startTime) * 2 + 2
           const endRow = (course.endTime - startTime) * 2 + 2
 
-          return <p className='calendar-course' style={{gridColumn: day + 2, gridRowStart: startRow, gridRowEnd: endRow}}>{course.department} {course.code}</p>
+          return <div className='calendar-course' style={{gridColumn: day + 2, gridRowStart: startRow, gridRowEnd: endRow}}>{course.department} {course.code}</div>
 
         })
 
