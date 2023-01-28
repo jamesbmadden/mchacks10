@@ -1,2 +1,2 @@
 # mchacks10
-Team _____'s McHcaks project
+Team _____'s McHacks project
