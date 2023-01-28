@@ -9,3 +9,8 @@
   width: calc(100% - 256px);
   right: 0;
 }
+
+.term-text {
+  margin-bottom: 5px;
+  font-size: 30px;
+}
