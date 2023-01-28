@@ -51,7 +51,8 @@ function App() {
     <div className="App">
       <nav className="nav-pane"></nav>
       <main className="content-pane">
-        <h1>Schedule Builder :)</h1>
+        <h1>Class Schedule Builder</h1>
+        <h2 className="term-text">Winter 2023</h2>
         <Calendar startTime={8} endTime={22} schedule={TEST_SCHEDULE}></Calendar>
       </main>
     </div>
