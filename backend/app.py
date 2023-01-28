@@ -16,10 +16,9 @@ def assets(path):
   print('Request for', path, 'recieved')
   return send_from_directory('../web/dist/assets', path)
 
-@app.route('/api/get/<url>')
-def get_html(url):
-  print('Request for HTML of', url, 'recieved')
-  response = make_response(browser.get_page_html("https://" + url), 200)
+@app.route('/api/course/<department>/<int:code>')
+def get_course(department, code):
+  response = make_response(browser.get_course(department, code), 200)
   response.mimetype = "text/plain"
   return response
 
