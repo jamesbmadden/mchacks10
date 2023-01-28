@@ -38,6 +38,7 @@
   border-style: none none none solid;
   border-width: 5px;
   padding: 10px;
+  font-weight: bold;
 }
 
 .calendar-gridline {
