@@ -44,7 +44,7 @@ const TEST_SCHEDULE: Course[] = [
 
 function App() {
   return (
-    <div className="App">
+    <div className="suggested-schedule">
       <nav className="nav-pane"></nav>
       <main className="content-pane">
         <h1>Class Schedule Builder</h1>
