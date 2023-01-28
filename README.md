@@ -1,2 +1,2 @@
 # mchacks10
-Team _____'s McHacks project
+The Serpents' McHacks project
