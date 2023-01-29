@@ -35,8 +35,6 @@ def get_rmp_score(professor):
   # now return both values!
   return (rating, difficulty)
 
-print(get_rmp_score("Sidney Trudeau"))
-
 # get info about a class
 def get_course(department, code):
   # open up the minerva course explorer thing
