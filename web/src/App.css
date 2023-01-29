@@ -10,7 +10,9 @@
 .nav-pane {
   height: 100%;
   width: 256px;
+  overflow: auto;
 }
+
 .content-pane {
   position: absolute;
   top: 0;
@@ -23,4 +25,33 @@
 .term-text {
   margin-bottom: 5px;
   font-size: 30px;
+}
+
+.prof {
+  margin: 20px;
+  border-radius: 5px;
+  padding: 1px 10px;
+}
+
+.nav-h2-text {
+  font-size: 26px;
+  line-height: normal;
+  margin: 50px 15px 0px;
+  text-align: center;
+}
+
+.prof-name {
+  margin: 5px;
+  font-weight: bold;
+}
+
+.prof-details {
+  margin: 5px;
+}
+
+.button {
+  background-color: #C0C0C0;
+  float: right;
+  margin: 0px 80px 30px 0px;
+  font-weight: bold;
 }
