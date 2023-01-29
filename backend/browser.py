@@ -4,12 +4,20 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.proxy import Proxy, ProxyType
 import time
 
-chrome_options = Options()
-chrome_options.add_argument("--headless")
+# create a proxy to *hopefully* speed things up
+capabilities = webdriver.DesiredCapabilities.CHROME.copy()
+proxy = Proxy()
+proxy.proxy_type = ProxyType.PAC
+proxy.proxy_autoconfig_url = 'http://localhost:5000/proxy.PAC'
+proxy.add_to_capabilities(capabilities)
 
-browser = webdriver.Chrome(options=chrome_options)
+chrome_options = Options()
+# chrome_options.add_argument("--headless")
+
+browser = webdriver.Chrome(options=chrome_options, desired_capabilities=capabilities)
 
 # get the info about a prof on rate my professor
 def get_rmp_score(professor):

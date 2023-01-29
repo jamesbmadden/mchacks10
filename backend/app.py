@@ -12,6 +12,11 @@ def index():
   print('Request for index page received')
   return send_file('../web/dist/index.html')
 
+@app.route('/proxy.PAC')
+def proxy():
+  print('Request for proxy received')
+  return send_file('../web/dist/proxy.PAC')
+
 @app.route('/assets/<path:path>')
 def assets(path):
   print('Request for', path, 'recieved')
