@@ -70,8 +70,12 @@ def get_course(department, code):
   # now, on the new page, select the option for the department we're looking for
   browser.find_element(By.CSS_SELECTOR, 'option[value="{}"]'.format(department)).click()
 
-  # click on the science faculty (for test :))
-  browser.find_element(By.CSS_SELECTOR, 'option[value="SC"]').click()
+  # if its a mech, facc, esce, or wcom course, go through the faculty of engineering
+  if department == 'MECH' or department == 'ECSE' or department == 'WCOM' or department == 'FACC':
+    browser.find_element(By.CSS_SELECTOR, 'option[value="EN"]').click()
+  # click on the science faculty if nothing else matches
+  else:
+    browser.find_element(By.CSS_SELECTOR, 'option[value="SC"]').click()
 
   # finally, type in the course code, then we can submit the search!!!
   code_input = browser.find_element(By.ID, 'crse_id')  # Find the search box
