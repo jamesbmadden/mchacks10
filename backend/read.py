@@ -43,8 +43,13 @@ def read_course_info(department, code):
 
       end_time = float(end_time_txt.split(':')[0])
 
+      print(code, end_time_txt)
+
       if ":25" in end_time_txt:
         end_time = end_time + 0.5
+      
+      if ":55" in end_time_txt:
+        end_time = end_time + 1
 
       if "pm" in end_time_txt and end_time < 12:
         end_time = end_time + 12
