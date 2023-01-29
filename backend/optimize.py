@@ -79,6 +79,5 @@ def optimize(courses, checking_score):
       record = score
       record_holder = section_numbers
 
-  # output the best schedule
-  print("With a score of", record, record_holder, "is the best combination.")
-  print("all scores:", scores)
+  # return the combinations and scores
+  return { 'record': record, 'record_holder': record_holder, 'scores': scores, 'sections': sections }
