@@ -46,7 +46,7 @@ def read_course_info(department, code):
       if ":25" in end_time_txt:
         end_time = end_time + 0.5
 
-      if "pm" in end_time_txt:
+      if "pm" in end_time_txt and end_time < 12:
         end_time = end_time + 12
 
       # and finally, get the days of the week!
