@@ -59,7 +59,12 @@ export default function Calendar ({ startTime, endTime, schedule }: CalendarProp
           const startRow = (course.startTime - startTime) * 2 + 2
           const endRow = (course.endTime - startTime) * 2 + 2
 
-          return <div className='calendar-course' style={{background: colours[index], gridColumn: day + 2, gridRowStart: startRow, gridRowEnd: endRow}}>{course.department} {course.code}</div>
+          return (
+            <div className='calendar-course' style={{background: colours[index], gridColumn: day + 2, gridRowStart: startRow, gridRowEnd: endRow}}>
+              <p style={{margin: 0}}>{course.department} {course.code}</p>
+              <p style={{fontWeight: 400, margin: 0}}>{course.location}</p>
+            </div>
+          )
 
         })
 
