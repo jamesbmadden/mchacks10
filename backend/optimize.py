@@ -80,4 +80,4 @@ def optimize(courses, checking_score):
       record_holder = section_numbers
 
   # return the combinations and scores
-  return { 'record': record, 'record_holder': record_holder, 'scores': scores, 'sections': sections }
+  return { 'record': record, 'record_holder': record_holder, 'scores': scores, 'sections': sections, 'courses': courses }
