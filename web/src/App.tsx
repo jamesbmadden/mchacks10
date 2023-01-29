@@ -84,15 +84,14 @@ function App() {
           <p className="prof-details">Difficulty: ⭐️⭐️⭐️⭐️⭐️</p>
         </div>
 
-        {/* register button! */}
-        <button className="button">Register</button>
-
 
       </nav>
 
       <main className="content-pane">
 
         <h1>Class Schedule Builder</h1>
+        
+
         <h2 className="term-text">Winter 2023</h2>
 
         <Calendar startTime={8} endTime={22} schedule={TEST_SCHEDULE}></Calendar>
