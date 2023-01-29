@@ -48,7 +48,7 @@ def get_course(department, code):
   browser.find_element(By.CSS_SELECTOR, 'input[type="Submit"]').click()
 
   # wait for the page to load
-  WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.ID, 'subj_id')))
+  WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[value="Get Course Sections"]')))
 
   # now, on the new page, select the option for the department we're looking for
   browser.find_element(By.CSS_SELECTOR, 'option[value="{}"]'.format(department)).click()
