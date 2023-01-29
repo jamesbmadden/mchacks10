@@ -66,7 +66,7 @@ def optimize(courses, checking_score):
     sections.append(section_numbers)
 
     # see if we beat the record!
-    if score > record:
+    if (checking_score and score > record) or (not checking_score and score < record):
       record = score
       record_holder = section_numbers
 
