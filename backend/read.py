@@ -1,3 +1,5 @@
+import browser
+
 # parse the inputted HTML for a course table from Minerva into valid info
 def read_course_info(html, department, code):
 
@@ -61,9 +63,8 @@ def read_course_info(html, department, code):
       if "F" in days:
         is_on_day[4] = True
 
-      print(days)
+      (rmp_score, difficulty) = browser.get_rmp_score(instructor.split(",")[0])
 
-      sections.append({ "department": department, "code": code, "section": section, "startTime": start_time, "endTime": end_time, "instructor": instructor, "location": location, "days": is_on_day })
+      sections.append({ "score": rmp_score, "difficulty": difficulty, "department": department, "code": code, "section": section, "startTime": start_time, "endTime": end_time, "instructor": instructor, "location": location, "days": is_on_day })
 
-  # desired response: [(Section #, Days, Start Time, End Time, Instructor, Location)]
   return sections
