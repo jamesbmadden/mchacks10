@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './App.css'
 import { Course } from './types/course'
 import ScheduleView from './components/ScheduleVIew'
+import '@material/mwc-circular-progress/mwc-circular-progress.js'
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
   }, [])
 
   if (isLoaded) return <ScheduleView schedule={schedule}></ScheduleView>
-  else return <p>loading...</p>
+  else return <div><mwc-circular-progress indeterminate></mwc-circular-progress><p>loading...</p></div>
 }
 
 export default App
