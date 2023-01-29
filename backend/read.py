@@ -19,6 +19,7 @@ def read_course_info(department, code):
       cells = row.split('</td>\n<td class="dddefault">')
       
       # now get all the important stuff!
+      crn = cells[2]
       section = cells[4]
       credits = cells[6]
       instructor = cells[13].replace("   ", " ").strip()
@@ -73,6 +74,6 @@ def read_course_info(department, code):
 
       (rmp_score, difficulty) = browser.get_rmp_score(instructor.split(",")[0])
 
-      sections.append({ "score": rmp_score, "difficulty": difficulty, "department": department, "code": code, "section": section, "startTime": start_time, "endTime": end_time, "instructor": instructor, "location": location, "days": is_on_day })
+      sections.append({ "crn": crn, "score": rmp_score, "difficulty": difficulty, "department": department, "code": code, "section": section, "startTime": start_time, "endTime": end_time, "instructor": instructor, "location": location, "days": is_on_day })
 
   return sections
