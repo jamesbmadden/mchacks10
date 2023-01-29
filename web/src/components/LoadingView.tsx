@@ -1,7 +1,18 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, DOMAttributes } from 'react'
 
+import { CircularProgress } from '@material/mwc-circular-progress/mwc-circular-progress.js'
 import '@material/mwc-circular-progress/mwc-circular-progress.js'
 import './LoadingView.css'
+
+type CustomElement<T> = Partial<T & DOMAttributes<T> & { children: any }>;
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      ['mwc-circular-progress']: CustomElement<CircularProgress>;
+    }
+  }
+}
 
 // possible options for the text on the loading screen, to keep it varied!
 const loadingMessages = [
