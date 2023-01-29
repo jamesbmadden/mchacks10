@@ -19,7 +19,7 @@ def read_course_info(department, code):
       cells = row.split('</td>\n<td class="dddefault">')
       
       # now get all the important stuff!
-      crn = cells[2]
+      crn = cells[1].split('</a>')[0].split('return true">')[1]
       section = cells[4]
       credits = cells[6]
       instructor = cells[13].replace("   ", " ").strip()

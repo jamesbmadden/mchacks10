@@ -15,6 +15,7 @@ export default function ScheduleView ({ schedule }: { schedule: Course[] }) {
             <div className="prof" style={{ background: colours[i] }}>
               <p className="prof-name">{course.department} {course.code}</p>
               <p className="prof-name">{course.instructor}</p>
+              <p className="prof-details">CRN: {course.crn}</p>
               <p className="prof-details">Quality: {"⭐️".repeat(Math.round(course.score))}</p>
               <p className="prof-details">Difficulty: {"⭐️".repeat(Math.round(course.difficulty))}</p>
             </div>
