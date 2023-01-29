@@ -7,6 +7,17 @@
   }
 }
 
+.page {
+  text-align: center;
+}
+
+.footer {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
 .suggested-schedule {
   animation: schedule-entering 1s;
   position: fixed;
@@ -70,4 +81,45 @@
 .button {
   background-color: #C0C0C0;
   font-weight: bold;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.course-input {
+  display: block;
+}
+
+.input-addbutton {
+  padding: 4px 8px;
+  border-radius: 16px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.input-addbutton:first-child {
+  margin-right: 1rem;
+}
+
+.course-input {
+  background-color: #1a1a1a;
+  border: none;
+  padding: 9.6px;
+  border-radius: 8px;
+}
+
+.course-input:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+@media (prefers-color-scheme: light) {
+  a:hover {
+    color: #747bff;
+  }
+  .course-input {
+    background-color: #f9f9f9;
+  }
 }
