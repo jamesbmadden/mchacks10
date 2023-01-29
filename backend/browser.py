@@ -15,7 +15,7 @@ proxy.proxy_autoconfig_url = 'http://localhost:5000/proxy.PAC'
 proxy.add_to_capabilities(capabilities)
 
 chrome_options = Options()
-# chrome_options.add_argument("--headless")
+chrome_options.add_argument("--headless")
 
 browser = webdriver.Chrome(options=chrome_options, desired_capabilities=capabilities)
 
