@@ -15,6 +15,10 @@ def optimize(courses, checking_score):
 
   # keep track of the winner, so that we know without looping over again which the best is
   record = 0
+
+  if not checking_score:
+    record = 10000
+
   record_holder = -1
 
   for combo in combinations:
@@ -48,8 +52,6 @@ def optimize(courses, checking_score):
     # this schedule IS viable, so compute the average score!!
     score = 0
     # start off really high if we're testing difficulty, lowest score wins
-    if not checking_score:
-      score = 10000
     section_numbers = []
     # get the sum of each classes' points
     # also, get a list of all the section numbers to keep track of that along with the score
