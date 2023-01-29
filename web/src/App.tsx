@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './App.css'
 import { Course } from './types/course'
 import ScheduleView from './components/ScheduleVIew'
-import '@material/mwc-circular-progress/mwc-circular-progress.js'
+import LoadingView from './components/LoadingView'
 
 function App() {
 
@@ -30,8 +30,15 @@ function App() {
 
   }, [])
 
-  if (isLoaded) return <ScheduleView schedule={schedule}></ScheduleView>
-  else return <div><mwc-circular-progress indeterminate></mwc-circular-progress><p>loading...</p></div>
+  return (
+    <>
+      <LoadingView></LoadingView>
+      {isLoaded && <ScheduleView schedule={schedule}></ScheduleView>}
+    </>
+  )
+
+  if (isLoaded) return 
+  else return 
 }
 
 export default App

@@ -1,10 +1,26 @@
+@keyframes schedule-entering {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 .suggested-schedule {
-  transition: transform 1s;
+  animation: schedule-entering 1s;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background: #242424;
+}
+
+@media (prefers-color-scheme: light) {
+  .suggested-schedule {
+    background: white;
+  }
 }
 
 .nav-pane {
