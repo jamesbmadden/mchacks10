@@ -82,13 +82,3 @@ def optimize(courses, checking_score):
   # output the best schedule
   print("With a score of", record, record_holder, "is the best combination.")
   print("all scores:", scores)
-
-
-courses = [
-  read.read_course_info('COMP', 208),
-  read.read_course_info('CHEM', 120),
-  read.read_course_info('PHYS', 142),
-  read.read_course_info('MATH', 141),
-]
-
-optimize(courses, False)
