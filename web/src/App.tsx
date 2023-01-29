@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 import { Course } from './types/course'
-import ScheduleView from './components/ScheduleVIew'
+import ScheduleView from './components/ScheduleView'
 import LoadingView from './components/LoadingView'
+import InputPage from './components/InputPage'
 
 function App() {
 
   const [ isLoaded, setIsLoaded ] = useState(false)
-  const [ schedule, setSchedule ] = useState([])
+  const [schedule, setSchedule] = useState([])
 
   useEffect(() => {
 
@@ -32,8 +33,9 @@ function App() {
 
   return (
     <>
-      <LoadingView></LoadingView>
-      {isLoaded && <ScheduleView schedule={schedule}></ScheduleView>}
+      <InputPage></InputPage>
+      {/* <LoadingView></LoadingView>
+      {isLoaded && <ScheduleView schedule={schedule}></ScheduleView>} */}
     </>
   )
 
