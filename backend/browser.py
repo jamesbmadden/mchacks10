@@ -8,7 +8,6 @@ import time
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-chrome_options.add_argument("--blink-settings=imagesEnabled=false")
 
 browser = webdriver.Chrome(options=chrome_options)
 
@@ -16,14 +15,26 @@ browser = webdriver.Chrome(options=chrome_options)
 def get_rmp_score(professor):
   # open up the rmp homepage
   browser.get('https://www.ratemyprofessors.com/')
-  # and enter McGill in to get started
-  browser.find_element(By.CLASS_NAME, 'Search__DebouncedSearchInput-sc-10lefvq-1').send_keys('McGill')
-  time.sleep(1)
-  browser.find_element(By.CLASS_NAME, 'Search__DebouncedSearchInput-sc-10lefvq-1').send_keys(Keys.ENTER)
-  time.sleep(1)
+
+  # and enter McGill in to get started ONLY IF it's asking for the university
+  if browser.find_elements(By.CSS_SELECTOR, 'input[placeholder="Your school"]'):
+
+    # GET RID OF THE COOKIE WINDOW
+    WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.CLASS_NAME, 'CCPAModal__StyledCloseButton-sc-10x9kq-2')))
+    browser.find_element(By.CLASS_NAME, 'CCPAModal__StyledCloseButton-sc-10x9kq-2').click()
+
+    browser.find_element(By.CLASS_NAME, 'Search__DebouncedSearchInput-sc-10lefvq-1').send_keys('McGill')
+    # wait for the clickable popup for McGill to appear
+    WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.CLASS_NAME, 'MenuItem__MenuItemHeader-h6a87s-0')))
+    # now click it!
+    browser.find_element(By.CLASS_NAME, 'MenuItem__MenuItemHeader-h6a87s-0').click()
+    time.sleep(1)
+  
   browser.find_element(By.CLASS_NAME, 'Search__DebouncedSearchInput-sc-10lefvq-1').send_keys(professor)
-  time.sleep(1)
-  browser.find_element(By.CLASS_NAME, 'Search__DebouncedSearchInput-sc-10lefvq-1').send_keys(Keys.ENTER)
+  # wait for the clickable popup for McGill to appear
+  WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.CLASS_NAME, 'MenuItem__MenuItemHeader-h6a87s-0')))
+  # now click it!
+  browser.find_element(By.CLASS_NAME, 'MenuItem__MenuItemHeader-h6a87s-0').click()
   
   # wait until the new page has loaded
   WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.CLASS_NAME, 'RatingValue__Numerator-qw8sqy-2')))
