@@ -42,6 +42,9 @@ function App() {
       setSchedule(courses)
       setIsLoaded(true)
 
+    }).catch(error => {
+      SetNeedsInput(true);
+      alert("Looks like Rate my Professor had an issue. Maybe try again?");
     });
 
   }, [needsInput])
