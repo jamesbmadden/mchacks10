@@ -20,7 +20,9 @@ const loadingMessages = [
   "Navigating minerva...",
   "Searching ratemyprofessors...",
   "Determining the best schedule...",
-  "Intense work! Almost there..."
+  "Almost there...",
+  "Really, we're almost there...",
+  "Any time now..."
 
 ]
 
