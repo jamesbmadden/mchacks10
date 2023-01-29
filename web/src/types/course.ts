@@ -7,5 +7,6 @@ export interface Course {
   endTime: number,
   days: boolean[],
   score: number,
-  difficulty: number
+  difficulty: number,
+  crn: string
 }
