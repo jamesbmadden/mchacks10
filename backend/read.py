@@ -1,7 +1,10 @@
 import browser
 
 # parse the inputted HTML for a course table from Minerva into valid info
-def read_course_info(html, department, code):
+def read_course_info(department, code):
+
+  # load the html
+  html = browser.get_course(department, code)
 
   # list of each section to return
   sections = []
@@ -18,7 +21,7 @@ def read_course_info(html, department, code):
       # now get all the important stuff!
       section = cells[4]
       credits = cells[6]
-      instructor = cells[13]
+      instructor = cells[13].replace("   ", " ").strip()
       location = cells[15]
 
       # and get the time too :)

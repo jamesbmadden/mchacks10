@@ -19,8 +19,7 @@ def assets(path):
 
 @app.route('/api/course/<department>/<int:code>')
 def get_course(department, code):
-  html = browser.get_course(department, code)
-  return read.read_course_info(html, department, code)
+  return read.read_course_info(department, code)
 
 
 
