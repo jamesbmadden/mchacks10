@@ -19,15 +19,6 @@ export default function Calendar ({ startTime, endTime, schedule }: CalendarProp
   return (
     <div className='calendar' style={{gridTemplateRows: `repeat(${rows + 1}, 1fr)`}}>
 
-      {/* row to show each day of the week */}
-      {/* <p className='calendar-day'>Mon</p>
-      <div className='calendar-vertical-gridline'></div>
-      <p className='calendar-day'>Tue</p>
-      <p className='calendar-day'>Wed</p>
-      <p className='calendar-day'>Thu</p>
-      <p className='calendar-day'>Fri</p> */}
-
-
       {['Mon', 'Tue', 'Wed', 'Thu'].map((day, i) => {
         return (<>
           <p className='calendar-day' style={{ gridColumn: i + 2 }}>{ day }</p>
