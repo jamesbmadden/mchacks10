@@ -47,6 +47,9 @@ def optimize(courses, checking_score):
 
     # this schedule IS viable, so compute the average score!!
     score = 0
+    # start off really high if we're testing difficulty, lowest score wins
+    if not checking_score:
+      score = 10000
     section_numbers = []
     # get the sum of each classes' points
     # also, get a list of all the section numbers to keep track of that along with the score
@@ -54,7 +57,7 @@ def optimize(courses, checking_score):
       if checking_score:
         score = score + course['score']
       else:
-        score = score - course['difficulty']
+        score = score + course['difficulty']
       
       section_numbers.append(course['section'])
 
