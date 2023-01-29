@@ -23,6 +23,8 @@ def optimize(courses, checking_score):
 
   for combo in combinations:
 
+    print("trying a combination")
+
     # loop over all the pairs of sections in this combo. If they conflict, skip this whole combo 😭
     is_conflicting = False
 
@@ -41,12 +43,14 @@ def optimize(courses, checking_score):
       if c1_days[0] != c2_days[0] and c1_days[1] != c2_days[1] and c1_days[2] != c2_days[2] and c1_days[3] != c2_days[3] and c1_days[4] != c2_days[4]:
         continue
       
-      if (c1_start_time >= c2_start_time and c2_end_time >= c1_start_time) or (c2_start_time >= c1_start_time and c1_end_time >= c2_start_time):
+      if (c1_start_time >= c2_start_time and c2_end_time > c1_start_time) or (c2_start_time >= c1_start_time and c1_end_time > c2_start_time) or (c1_start_time == c2_start_time):
         # there's a conflict :( this schedule is NOT viable
+        print("We're conflicting! we are", c1['code'], c1['section'], c2['code'], c2['section'])
         is_conflicting = True
         break
 
     if is_conflicting:
+      print("THERE WAS A CONFLICT!!!")
       continue
 
     # this schedule IS viable, so compute the average score!!
@@ -77,6 +81,7 @@ def optimize(courses, checking_score):
 
   # output the best schedule
   print("With a score of", record, record_holder, "is the best combination.")
+  print("all scores:", scores)
 
 
 courses = [
